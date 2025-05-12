@@ -6,10 +6,13 @@ POST http://localhost:3000/movies
 Content-Type: application/json
 
 {
-    "name":"Shigatsu wa Kimi no uso",
-    "year":2015,
-    "sinopsis":"una mentira en abril comienza todo con kaori y kousei que esta tratando de volver a conocer el sonido del piano"
+        "name": "Attack on titan",
+        "year": 2013,
+        "sinopsis": "un chico llamado eren desea salair de las murallas, pero de repente su mundo se emepiezza a caer cuando los titanes se meten a su distrito y el busca venganza por la muerte de su madre y para obttener la seguridad de su isla"
 }
 
 ###
-DELETE http://localhost:3000/movies/3
+DELETE http://localhost:3000/movies/6
+
+###
+GET http://localhost:3000/movies/3
