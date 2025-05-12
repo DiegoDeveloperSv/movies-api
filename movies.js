@@ -64,6 +64,7 @@ app.post('/movies', (req, res)=>{
 });
 
 app.get('/movies', (req, res)=>{
+    res.header('Access-Controll-Allow-Origin', '*');
     res.json(movies);
 });
 
