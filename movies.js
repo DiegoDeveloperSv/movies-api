@@ -1,6 +1,7 @@
 
 import express from 'express';
 import {validate, partialMovie} from './zod.js';
+import cors from 'cors';
 import fs from 'node:fs';
 const app = express();
 
@@ -9,6 +10,7 @@ const require = createRequire(import.meta.url);
 const movies = require('./movies.json');
 
 app.use(express.json());
+app.use(cors());
 
 function save(object){
     fs.writeFileSync('./movies.json', JSON.stringify(object, null, 4));
