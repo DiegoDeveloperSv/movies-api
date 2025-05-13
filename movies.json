@@ -10,5 +10,11 @@
         "name": "Attack on titan",
         "year": 2013,
         "sinopsis": "un chico llamado eren desea salair de las murallas, pero de repente su mundo se emepiezza a caer cuando los titanes se meten a su distrito y el busca venganza por la muerte de su madre y para obttener la seguridad de su isla"
+    },
+    {
+        "id": 3,
+        "name": "Jujutsu Kaisen",
+        "year": 2020,
+        "sinopsis": "Yuji Itadori es un estudiante normal de secundaria hasta que megumi fushiguro lo encuentra y por desgraciia de come uno de los dedos de sukuna y tiene que encontrarlos todos hasta absorverlo"
     }
 ]
