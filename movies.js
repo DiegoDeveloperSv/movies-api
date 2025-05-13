@@ -6,6 +6,7 @@ import fs from 'node:fs';
 const app = express();
 
 import { createRequire } from 'module';
+import { ppid } from 'node:process';
 const require = createRequire(import.meta.url);
 const movies = require('./movies.json');
 
@@ -17,6 +18,7 @@ function save(object){
 }
 
 app.get('/movies/:id', (req, res)=>{
+    res.header('Access-Controll-Allow-Origin', '*');
     const {id} = req.params;
     const found = movies.find(movie => movie.id === parseInt(id));
 
@@ -28,6 +30,7 @@ app.get('/movies/:id', (req, res)=>{
 })
 
 app.delete('/movies/:id', (req, res)=>{
+    res.header('Access-Controll-Allow-Origin', '*');
     const {id} = req.params;
     const index = movies.findIndex(movie => movie.id === parseInt(id));
 
@@ -41,6 +44,7 @@ app.delete('/movies/:id', (req, res)=>{
 })
 
 app.post('/movies', (req, res)=>{
+    res.header('Access-Controll-Allow-Origin', '*');
     const result = validate(req.body);
 
     if(result.error){
@@ -67,8 +71,13 @@ app.post('/movies', (req, res)=>{
 
 app.get('/movies', (req, res)=>{
     res.header('Access-Controll-Allow-Origin', '*');
-    res.json(movies);
+    res.json(JSON.stringify(movies, null, 4));
 });
+
+app.get('/', ()=>{
+    res.header('Access-Controll-Allow-Origin', '*');
+    res.json('bienvenido a las apis, ingresa /movies en el enlace para ver las peliculas');
+})
 
 const PORT = process.env.PORT ?? 3000;
 
